@@ -21,12 +21,13 @@ export default class Board {
 
   public build() {
     const land = new Land(this, Land.random(), new Position(0, 0));
-    const building = new Building(land, "house", "a");
 
     this.lands.add(land);
-    this.buildings.add(building);
 
     this.buildAround(land);
+
+    const building = new Building(land, "house", "a");
+    this.buildings.add(building);
   }
 
   public hasLand(position: Position): boolean {
